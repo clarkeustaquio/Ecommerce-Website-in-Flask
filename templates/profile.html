@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <title>Profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/profile.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+    
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                        <ul>
+                            <li><a href ="/cart">CART</a></li>
+                            <li>|</li>
+                            <li>
+                                <a>ACCOUNT</a>
+                                <ul>
+                                    <div class ="dropDown-content">
+                                        <li><a href="/profile">PROFILE</a></li>
+                                        <li><a href="/logout">LOG-OUT</a></li>
+                                    </div>
+                                </ul>
+                            </li>   
+                        </ul>
+                    {% else %}
+                        <ul>
+                            <li><a href ="/signup">SIGN-UP</a></li>
+                            <li>|</li>
+                            <li>
+                                <a href ="/login">LOG-IN</a>
+                            </li>   
+                        </ul>
+                    {% endif %}
+                </div>
+    
+                <a href ="/">
+                    <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+
+
+            <div class ="profileSetting">
+                <div class ="header">
+                    <h4>My Profile</h4>
+                    <p>Manage and protect your account</p>
+                    <hr>
+                </div>
+
+                <div class = "rowContent">
+                    <form method ="POST" actions="/profile">
+                        <div class ="columnA">
+                            <h5>Username: {{ username }} </h5>
+                            <h5>Password: *********** <a    href="/password">Change</a></h5>
+                            <h5>Email: {{ email }} <a href="/email">Change</a></h5>
+                            <h5>Gender: 
+                                {% if gender == "Male"%}
+                                    <input id="male" name = "gender" type = "radio" value = "Male" placeholder="Male" checked required>	
+                                    <label for="male">Male</label>
+                                    <input id="female" name = "gender" type = "radio" value = "Female" required>
+                                    <label for="female">Female</label>
+                                {% else %}
+                                    <input id="male" name = "gender" type = "radio" value = "Male" placeholder="Male" required>	
+                                    <label for="male">Male</label>
+                                    <input id="female" name = "gender" type = "radio" value = "Female" checked required>
+                                    <label for="female">Female</label>
+                                {% endif%}
+                            </h5>
+                            <h5>Birthday:
+                                <input style = "width: 50%; display: inline-block" class = "form-control" value = "{{ birthday }}" name = "birthday" type = "date" required>
+                            </h5>
+                            <input style ="margin-left: 0%; margin-top: 5%" type="submit" name ='action' id ="history" value="HISTORY">
+                        </div>
+                        
+                        <div class = "columnB">
+                            <div class ="vertical"></div>
+
+                            <h5>Contact Number: 
+                                <input style = "width: 50%; display: inline-block" class = "form-control" value = "{{ contact }}" name = "contact" type = "number" placeholder= "Contact Number" required> 
+                            </h5>
+                            <h5>Shipping Address</h5>
+                            {% if add1 is not none %}
+                                <input style = "width: 80%; display: inline-block" value = "{{ add1 }}" class = "form-control" name = "address1" type = "text" placeholder="Address-1" required> 
+                                <input style = "width: 80%; display: inline-block" value = "{{ add2 }}" class = "form-control" name = "address2" type = "text" placeholder="Address-2" required>
+                                <input style = "width: 80%; display: inline-block" value = "{{ cit }}" class = "form-control" type="text" name = "city" placeholder="City" required>
+                                <input style = "width: 80%; display: inline-block" value = "{{ postal }}" class = "form-control" type="number" name = "postalCode" placeholder="Postal Code" required>
+                            {% else %}
+                                <input style = "width: 80%; display: inline-block" class = "form-control" name = "address1" type = "text" placeholder="Address-1" required> 
+                                <input style = "width: 80%; display: inline-block" class = "form-control" name = "address2" type = "text" placeholder="Address-2" required>
+                                <input style = "width: 80%; display: inline-block" class = "form-control" type="text" name = "city" placeholder="City" required>
+                                <input style = "width: 80%; display: inline-block" class = "form-control" type="number" name = "postalCode" placeholder="Postal Code" required>
+                            {% endif %}
+
+                            <select name = "country" class = "form-control" style = "width: 80%; display: inline-block">
+                                {% for data in countries %}
+                                    <option value="{{data[0]}}">{{data[1]}}</option>
+                                {% endfor %}
+                            </select>
+
+                            <button onclick="window.location.href='/profile'">Delete Account</button>
+                            <input name ='action' type="submit" id ="signin" value="Save Changes">
+                        </div>
+                    </form>
+                </div>   
+            </div>
+        </div>
+
+
+
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+    </body>
+</html>

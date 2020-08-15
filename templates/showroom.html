@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <title>Showroom</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/showroom.css">
+
+        <!--LIGHTBOX-->
+        <link rel="stylesheet" type="text/css" href ="static/css/lightbox.min.css">
+        <script type ="text/javascript" src="static/js/lightbox-plus-jquery.min.js"></script>
+        <!--//-->
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+    
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                    <ul>
+                        <li><a href ="/cart">CART</a></li>
+                        <li>|</li>
+                        <li>
+                            <a>ACCOUNT</a>
+                            <ul>
+                                <div class ="dropDown-content">
+                                    <li><a href="/profile">PROFILE</a></li>
+                                    <li><a href="/logout">LOG-OUT</a></li>
+                                </div>
+                            </ul>
+                        </li>   
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li><a href ="/signup">SIGN-UP</a></li>
+                        <li>|</li>
+                        <li>
+                            <a href ="/login">LOG-IN</a>
+                        </li>   
+                    </ul>
+                {% endif %}
+                </div>
+                <a href ="/">
+                    <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+
+            <div class = "upper">
+                <h1>STEINWAY SHOWROOM</h1>
+                <p>
+                    Steinway Hall is the name of buildings housing concert halls, 
+                    showrooms and sales departments for Steinway & Sons pianos. The first Steinway Hall 
+                    was opened in 1866 in New York City. Today, Steinway Halls and Steinway-Häuser are 
+                    located in cities such as New York City, London, Berlin, and Vienna.
+                </p>
+            </div>
+
+            <div class = "middle">
+                <button onclick="window.location.href='/guide'">LEARN MORE</button>
+            </div>
+            <div class = "gallery">
+                <div class ="innerGallery">
+                    <a href="static/img/showroom-1.jpg" data-lightbox="mygallery"><img id = "myImg" src="static/img/showroom-1.jpg"></a>
+                </div>
+                <div class ="innerGallery">
+                    <a href="static/img/showroom-2.jpg" data-lightbox="mygallery"><img id = "myImg" src="static/img/showroom-2.jpg"></a>
+                </div>
+                <div class ="innerGallery">
+                    <a href="static/img/showroom-3.jpg" data-lightbox="mygallery"><img id = "myImg" src="static/img/showroom-3.jpg"></a>
+                </div>
+                <div class ="innerGallery">
+                    <a href="static/img/showroom-4.jpg" data-lightbox="mygallery"><img id = "myImg" src="static/img/showroom-4.jpg"></a>
+                </div>
+                <div class ="innerGallery">
+                    <a href="static/img/showroom-5.jpg" data-lightbox="mygallery"><img id = "myImg" src="static/img/showroom-5.jpg"></a>
+                </div>
+                <div class ="innerGallery">
+                    <a href="static/img/showroom-6.jpg" data-lightbox="mygallery"><img id = "myImg" src="static/img/showroom-6.jpg"></a>
+                </div>
+            </div>
+                <h2>“A steinway is a steinway, and there is nothing like it in the world.”</h2>
+        </div>
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+
+    </body>
+</html>
+<script>
+    function navFunction(){
+        var clickBurger = document.getElementById("navLinks");
+        var toHide = document.getElementById("toHide");
+
+        if(clickBurger.style.display === "block"){
+            clickBurger.style.display = "none";
+            toHide.style.display = "block";
+        }else{
+            clickBurger.style.display = "block";
+            clickBurger.style.height = "100%";
+            toHide.style.display = "none";
+        }
+    }
+</script>

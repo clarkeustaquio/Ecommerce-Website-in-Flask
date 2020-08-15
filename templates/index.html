@@ -1,0 +1,402 @@
+<html>
+    <head>
+        <title>Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body>
+    <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+       <div class ="desktopNav">
+           <div class = "desktopImage">
+            <div class ="forUser">
+                {% if session['username'] %}
+                    <ul>
+                        <li><a href ="/cart">CART</a></li>
+                        <li>|</li>
+                        <li>
+                            <a>ACCOUNT</a>
+                            <ul>
+                                <div class ="dropDown-content">
+                                        <li><a href="/profile">PROFILE</a></li>
+                                        <li><a href="/logout">LOG-OUT</a></li>
+                                </div>
+                            </ul>
+                        </li>   
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li><a href ="/signup">SIGN-UP</a></li>
+                        <li>|</li>
+                        <li>
+                            <a href ="/login">LOG-IN</a>
+                        </li>   
+                    </ul>
+                {% endif %}
+            </div>
+
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+            </a>
+           </div>
+            <hr>
+            <div id ="desktopLink">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+
+        <div class = "forDesktopOnly">
+            <div id = "demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                    <li data-target="#demo" data-slide-to="4"></li>
+                    <li data-target="#demo" data-slide-to="5"></li>
+                </ul>
+
+                <div class ="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="static/img/banner4.jpeg"> 
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div> 
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="static/img/newBanner-1.jfif">
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="static/img/newBanner-6.jfif">  
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="static/img/banner6.jpeg">
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>  
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="static/img/newBanner-2.jfif">  
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="static/img/newBanner-5.jfif">
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>  
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+        <div id = "toHide">
+            <div class="slidershowBanner">
+                <div class="slides">
+                    <input type ="radio" name="r" id ="r1" checked>
+                    <input type ="radio" name="r" id ="r2"  >
+                    <input type ="radio" name="r" id ="r3">
+                    <input type ="radio" name="r" id ="r4">
+                    <input type ="radio" name="r" id ="r5">
+    
+                    <div class = "slide s1">
+                        <img src = "static/img/banner4.jpeg" alt="Banner 1">
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>
+                    </div>
+                    <div class = "slide">
+                        <img src = "static/img/banner6.jpeg" alt="Banner 2">
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>
+                    </div>
+                    <div class = "slide">
+                        <img src = "static/img/banner7.jpeg" alt="Banner 3">
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>
+                    </div>
+                    <div class = "slide">
+                        <img src = "static/img/banner8.jpeg" alt="Banner 4">
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>
+                    </div>
+                    <div class = "slide">
+                        <img src = "static/img/banner5.jpeg" alt="Banner 5">
+                        <div class = "carouselText">
+                            <h3>The Magic of Music</h3>
+                            <p>Sit Down, Close Your Eyes, TOUCH THE KEYS, AND LISTEN.</p>
+                            <button onclick="window.location.href='/guide'">LEARN MORE</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class ="navigation">
+                    <label for="r1" class = "bar"></label>
+                    <label for="r2" class = "bar"></label>
+                    <label for="r3" class = "bar"></label>
+                    <label for="r4" class = "bar"></label>
+                    <label for="r5" class = "bar"></label>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+    
+
+    <div class = "intro">
+        <p>
+            For over 160 years, STEINWAY & SONS 
+            has been dedicated to making the finest 
+            pianos in the world. Our pioneering 
+            handcrafted methods are still employed
+            today to ensure our uncompromising 
+            standards of quality, in turn ensuring 
+            that the STEINWAY remains the peerless 
+            instrument of uncompromising 
+            expression.
+        </p>
+    </div>
+
+    <div class ="flex-container">
+        <div class = "inner-flex">
+            <button>
+                <a href ="/guide">
+                    <img src = "static/img/buyersGuide.jpg" alt="Flex 1">
+                    <span>
+                        <h3>BUYER'S GUIDE</h3>
+                        <div class = "hideSomething">
+                            <div class = "innerSomething">
+                                <h5>Learn More</h5>
+                            </div>
+                        </div>
+                    </span>
+                </a>
+            </button>
+        </div>
+
+        <div class = "inner-flex">
+            <button>
+                <a href ="/pianos">
+                    <img src = "static/img/showroom.jpg" alt="Flex 2">
+                    <span>
+                        <h3>PIANOS</h3>
+                        <div class = "hideSomething">
+                            <div class = "innerSomething">
+                                <h5>Learn More</h5>
+                            </div>
+                        </div>
+                    </span>
+                </a>
+            </button>
+        </div>
+
+        <div class = "inner-flex">
+            <button>
+                <a href ="/showroom">
+                    <img src = "static/img/vault.png" alt="Flex 3">
+                <span>
+                    <h3>SHOWROOM</h3>
+                    <div class = "hideSomething">
+                        <div class = "innerSomething">
+                            <h5>Learn More</h5>
+                        </div>
+                    </div>
+                    </span>
+            </a>
+            </button>
+        </div>
+        <div class = "inner-flex">
+            <button>
+                <a href ="/musicartist">
+                <img src = "static/img/spirio.jpg" alt="Flex 4">
+                <span>
+                    <h3>MUSIC & ARTIST</h3>
+                    <div class = "hideSomething">
+                        <div class = "innerSomething">
+                            <h5>Learn More</h5>
+                        </div>
+                    </div>
+            </span>
+            </a>
+            </button>
+        </div>
+        <div class = "inner-flex">
+            <button>
+                <a href ="/education">
+                <img src = "static/img/floorTemplate.jpg" alt="Flex 5">
+                    <span>
+                    <h3>EDUCATION</h3>
+                    <div class = "hideSomething">
+                        <div class = "innerSomething">
+                            <h5>Learn More</h5>
+                        </div>
+                    </div>
+                    </span>
+                    </a>
+            </button>
+        </div>
+        <div class = "inner-flex">
+            <button>
+                <a href ="/news">
+                <img src = "static/img/insidePiano.jpg" alt="Flex 6">
+                    <span>
+                    <h3>NEWS</h3>
+                    <div class = "hideSomething">
+                        <div class = "innerSomething">
+                            <h5>Learn More</h5>
+                        </div>
+                    </div>
+                    </span>
+                </a>
+            </button>
+        </div>
+    </div>
+
+    <div class = "intro-lower">
+        <h3>EXPERIENCE SPIRIO</h3>
+        <h5>THE WORLD’S finest HIGH-RESOLUTION PLAYER PIANO</h5>
+        <p>
+            A masterpiece
+            of artistry and engineering in your
+            home, SPIRIO enables you to enjoy 
+            performances captured by great pianists
+            — played with such nuance, power and 
+            passion that it is 
+            utterly indistinguishable from a live
+            performance.   
+        </p>
+    </div>
+
+    <div class = "forLowerImage">
+        <img src = "static/img/lowerImage.jpg" alt="Piano Image">
+        <hr style ="margin-left: 25% !important; margin-right: 25% !important">
+    </div>
+
+    <div class = "topFooter">
+        <p>
+            “I listened and was
+            marveled. I must be 
+            dreaming.... Buying a piano
+            no longer means having to
+            wait for a pianist to play it
+            at home.”
+        </p>
+        <h3>LANG LANG</h3>
+        <hr style ="margin-left: 25% !important; margin-right: 25% !important">
+        <h5>THE STEINWAY & SONS</h5>
+    </div>  
+    </div>
+
+    <!-------------------------------------->
+
+    <div class = "footer">
+        <div class ="footer-content">
+            <div class="footer-section about">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2020 Steinway & Sons | Eustaquio
+        </div>
+    </div>
+
+    <!---------------------------------------->
+
+    </body>
+</html>
+<script>
+    function navFunction(){
+        var clickBurger = document.getElementById("navLinks");
+        var toHide = document.getElementById("toHide");
+
+        if(clickBurger.style.display === "block"){
+            clickBurger.style.display = "none";
+            toHide.style.display = "block";
+        }else{
+            clickBurger.style.display = "block";
+            clickBurger.style.height = "100%";
+            toHide.style.display = "none";
+        }
+    }
+</script>

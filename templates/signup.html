@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Signup</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/signup.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body style ="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(static/img/showroom.jpg)">       
+        <form method="POST" actions="/signup">
+            <div class = "middleLogin">
+                    <h1>Sign Up</h1>
+                    <input type="text" name = "firstName" id="firstName" placeholder="First Name" required>
+                    <input type="text" name = "lastName" id="lastName" placeholder="Last Name" required>
+                    <input type="text" name = "username" id="username" placeholder="Username" required>
+                    <input type="password" name = "password" id="password" placeholder="Password" required>
+
+                    <input name = "email" type = "email" placeholder = "Email Address" required>
+                    <input name = "birthday" type = "date" required>
+
+                    <input id="male" name = "gender" type = "radio" value = "Male" required placeholder="Male">	
+                    <label for="male" style ="color: white">Male</label>
+                    <input id="female" name = "gender" type = "radio" value = "Female" required>
+                    <label for="female" style ="color: white">Female</label>
+
+                    <input name = "contact" type = "number" placeholder= "Contact Number" required>
+
+                    <input type="submit" id ="signin" value="Sign In">
+                    <h5>Have already an account? <a href="/login">Login Here</a></h5>
+            </div>
+        </form>
+    </body>
+</html>

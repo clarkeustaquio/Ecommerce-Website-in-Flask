@@ -1,0 +1,214 @@
+<html>
+    <head>
+        <title>Music & Artist</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/musicartist.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                    <ul>
+                        <li><a href ="/cart">CART</a></li>
+                        <li>|</li>
+                        <li>
+                            <a>ACCOUNT</a>
+                            <ul>
+                                <div class ="dropDown-content">
+                                    <li><a href="/profile">PROFILE</a></li>
+                                    <li><a href="/logout">LOG-OUT</a></li>
+                                </div>
+                            </ul>
+                        </li>   
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li><a href ="/signup">SIGN-UP</a></li>
+                        <li>|</li>
+                        <li>
+                            <a href ="/login">LOG-IN</a>
+                        </li>   
+                    </ul>
+                {% endif %}
+                    
+                </div>
+                <a href ="/">
+                    <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+
+
+            <div class ="videoPlayer">
+                    <video controls autoplay muted loop>
+                        <source src = "static/video/Exotic_Woods_tag2.mp4" type ="video/mp4">
+                    </video>
+            </div>
+
+            <div class = "newsLetter">
+                <h1>MUSIC & ARTIST</h1>
+                <p>
+                    Without them, a STEINWAY piano is silent. But together, 
+                    the artist and piano create music — and over nineteen out of 
+                    twenty professional pianists choose to perform on STEINWAY pianos.
+                </p>
+            </div>
+
+
+            <div class = "gallery">
+                <div class = "innerGallery">
+                    <img src = "static/img/musicArtist-3.jpg">
+                </div>
+                <div class = "innerGallery">
+                    <img src = "static/img/musicArtist-2.jpg">
+                </div>
+                <div class = "innerGallery">
+                    <img src = "static/img/musicArtist-1.jpg">
+                </div>
+            </div>
+
+            <div class = "forFeatures">
+                <h1>FEATURES</h1>
+            </div>
+
+            <div class = "contentMiddle">
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>Lang Lang Plays ‘Für Elise’</h3>
+                            <h5>STEINWAY ARTIST Lang Lang performs Beethoven’s “Für Elise” on 
+                                the LANG LANG BLACK DIAMOND LIMITED EDITION live at the instrument’s 
+                                unveiling at the Philharmonie de Paris.</h5>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/music-1.jpg">
+                        </div>
+                    </div>
+
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>Transcendental Etudes — Interview with Konstantin Scherbakov</h3>
+                            <h5>Russian pianist Konstantin Scherbakov has paired Franz Liszt’s and Sergei 
+                                Lyapunov’s Transcendental Etudes for the Steinway & Sons label.</h5>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/music-2.jpg">
+                        </div>
+                    </div>
+
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>‘I Was Able to Speak to Myself’</h3>
+                            <h5>Renzo Vitale on recording his music for the Steinway & Sons Spirio</h5>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/music-3.jpg">
+                        </div>
+                    </div>
+
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>‘Brilliant Songs’</h3>
+                            <h4>David Rosenthal, Billy Joel’s longtime music director and keyboardist, on working with and arranging for The Piano Man</h4>
+                            <h5>By Ben Finane</h5>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/music-4.jpg">
+                        </div>
+                    </div>
+
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>A New Vision</h3>
+                            <h4>Ludovico Einaudi on defining his music; his mentor, Luciano Berio; his compositional process; and his recordings for Steinway & Sons Spirio</h4>
+                            <h5>by Damian Fowler</h5>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/music-5.jpg">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+        
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+
+    </body>
+</html>
+
+<script>
+    function navFunction(){
+        var clickBurger = document.getElementById("navLinks");
+        var toHide = document.getElementById("toHide");
+
+        if(clickBurger.style.display === "block"){
+            clickBurger.style.display = "none";
+            toHide.style.display = "block";
+        }else{
+            clickBurger.style.display = "block";
+            clickBurger.style.height = "100%";
+            toHide.style.display = "none";
+        }
+    }
+</script>

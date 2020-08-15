@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <title>News</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/news.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+    
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                    <ul>
+                        <li><a href ="/cart">CART</a></li>
+                        <li>|</li>
+                        <li>
+                            <a>ACCOUNT</a>
+                            <ul>
+                                <div class ="dropDown-content">
+                                    <li><a href="/profile">PROFILE</a></li>
+                                    <li><a href="/logout">LOG-OUT</a></li>
+                                </div>
+                            </ul>
+                        </li>   
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li><a href ="/signup">SIGN-UP</a></li>
+                        <li>|</li>
+                        <li>
+                            <a href ="/login">LOG-IN</a>
+                        </li>   
+                    </ul>
+                {% endif %}
+                    
+                </div>
+                <a href ="/">
+                    <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+
+
+            <div class ="videoPlayer">
+                    <video controls autoplay muted loop>
+                        <source src = "static/video/NewsBanner.mp4" type ="video/mp4">
+                    </video>
+            </div>
+
+            <div class = "newsLetter">
+                <h1>NEWS & FEATURES</h1>
+                <p>
+                    As part of its mission to ignite the cultural conversation, 
+                    STEINWAY & SONS embraces and enables cultural connections the 
+                    world over — spanning music, the visual & performing arts, the written word, 
+                    film & television, architecture & design, craftsmanship & artistry.
+                </p>
+            </div>
+
+            <div class = "contentMiddle">
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>Alone with Bess</h3>
+                            <h4>Donald Shirley’s life on his Steinway</h4>
+                            <h5>By Laura Smith</h5>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/news-1.jpg">
+                        </div>
+                    </div>
+
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>Inside the Vault</h3>
+                            <h4>Steinway & Sons offers a peek inside its most exclusive showroom.</h4>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/news-2.jpg">
+                        </div>
+                    </div>
+
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>Gaga Stays Steinway</h3>
+                            <h4>Lady Gaga at the Oscars on a walnut Steinway grand</h4>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/news-3.jpg">
+                        </div>
+                    </div>
+
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>Collaboration in Vermont</h3>
+                            <h4>The Marlboro Festival’s traditions bring generations of chamber musicians together.</h4>
+                            <h5>by Clive Paget </h5>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/news-4.jpg">
+                        </div>
+                    </div>
+
+                    <div class = "rowMiddle">
+                        <div class ="columnA">
+                            <h3>Steinway for Voice</h3>
+                            <h4>Opera singer Michael Fabiano wanted a piano worthy of Verdi.</h4>
+                            <h5>by Damian Fowler</h5>
+                        </div>
+                        <hr>
+                        <div class = "columnB">
+                            <img src ="static/img/news-5.jpg">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+        
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+
+    </body>
+</html>
+
+<script>
+    function navFunction(){
+        var clickBurger = document.getElementById("navLinks");
+        var toHide = document.getElementById("toHide");
+
+        if(clickBurger.style.display === "block"){
+            clickBurger.style.display = "none";
+            toHide.style.display = "block";
+        }else{
+            clickBurger.style.display = "block";
+            clickBurger.style.height = "100%";
+            toHide.style.display = "none";
+        }
+    }
+</script>

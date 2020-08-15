@@ -1,0 +1,70 @@
+@media only screen and (min-width: 1000px){
+    body{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/showroom.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: white;
+        font-family: "Roboto";
+    }
+
+    .middleLogin{
+        background-color: rgba(0,0,0,0.5);
+        margin: auto;
+        margin-top: 5%;
+        width: 30%;
+        height: 65%;
+        border-radius: 5%;
+    }
+    .middleLogin h1{
+        padding-left: 50px;
+        padding-top: 60px;
+        padding-bottom: 20px;
+        color: white;
+    }
+    .middleLogin h5{
+        color: rgba(108, 122, 137, 1);
+        font-size: 17px;
+        padding-left: 50px;
+        padding-top: 10px;
+    }
+    .middleLogin a{
+        text-decoration: none;
+        color: white;
+    }
+    .middleLogin:hover a{
+        color: white;
+    }
+    ::placeholder{
+        color: rgba(189, 195, 199, 1);
+        font-size: 15px;
+        padding: 1%;
+    }
+    input[type=text], input[type=password]{
+        width: 80%;
+        padding: 12px;
+        margin: auto;
+        box-sizing: border-box;
+        display: flex;
+        border-radius: 8px;
+        border: none;
+        background-color: rgba(108, 122, 137, 1);
+        color: white;
+        margin-bottom: 4%;
+    }
+    input[type=submit]{
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 15px 34% 15px 34%;
+        color: white;
+        background-color: rgba(207, 0, 15, 1);
+        text-align: center;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: "Roboto Medium";
+        border-radius: 8px;
+        margin-left: 10%;
+        margin-top: 5%;
+    }
+}

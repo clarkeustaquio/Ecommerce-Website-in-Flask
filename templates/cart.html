@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title>Cart</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/cart.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+    
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                        <ul>
+                            <li><a href ="/cart">CART</a></li>
+                            <li>|</li>
+                            <li>
+                                <a>ACCOUNT</a>
+                                <ul>
+                                    <div class ="dropDown-content">
+                                        <li><a href="/profile">PROFILE</a></li>
+                                        <li><a href="/logout">LOG-OUT</a></li>
+                                    </div>
+                                </ul>
+                            </li>   
+                        </ul>
+                    {% else %}
+                        <ul>
+                            <li><a href ="/signup">SIGN-UP</a></li>
+                            <li>|</li>
+                            <li>
+                                <a href ="/login">LOG-IN</a>
+                            </li>   
+                        </ul>
+                    {% endif %}
+                </div>
+    
+                <a href ="/">
+                    <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+
+                <div class ="cartHeader">
+                    <form method="POST" action="/checkout">
+                        <div class ="header">
+                            <h4>My Cart</h4>
+                            <p>Manage and secure your transaction</p>
+                            <hr>
+                        </div>
+                        <div class ="headerCart">
+                            <div class ="topRow">
+                                <div class="topColA">
+                                    <h5>Product Name</h5>
+                                </div>
+                                <div class="topColB">
+                                    <h5>Price</h5>
+                                </div>
+                                <div class="topColC">
+                                    <h5>Action</h5>
+                                </div>
+                            </div>
+                        </div>
+                        {% if cart is not none %}
+                            {% for data in cart %}
+                            <div class = "cart">
+                                <div class = "limit">
+                                    <div class = "innerRow">
+                                        <div class = "innerColA">
+                                            <div class = "sideImage">
+                                                <img src = "{{ data[5] }}">
+                                            </div>
+                                            <div class = "productName">
+                                            
+                                                <h3>{{ data[7] }}</h3> 
+                                                <h5>{{ data[8] }}</h5>
+                                                <a href="/products/{{ data[2] }}">Review</a>
+                                            </div>
+                                        </div>
+                                        <div class = "innerColB">
+                                            <h5>Quantity: {{ data[6] }}</h5>
+                                            <h5>Shipping Fee: ${{ data[3] }}</h5>
+                                            <h4>${{ data[4] }}</h4>
+                                        </div>
+                                        <div class = "innerColC">
+                                            <h5>Status: {{ data[0] }}</h5>
+                                            <h5>Mover: {{ courierID[0] }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}  
+                                <div class ="checkOutButton">
+                                    <input type="submit" id ="checkOut" value="Check Out">  
+                                </div>
+                        {% endif %}
+
+                        <div class ="bottomSpace"></div>
+                    </form>
+                </div>
+        </div>
+
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+    </body>
+</html>

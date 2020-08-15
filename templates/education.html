@@ -1,0 +1,272 @@
+<html>
+    <head>
+        <title>Education</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/education.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+    
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                    <ul>
+                        <li><a href ="/cart">CART</a></li>
+                        <li>|</li>
+                        <li>
+                            <a>ACCOUNT</a>
+                            <ul>
+                                <div class ="dropDown-content">
+                                    <li><a href="/profile">PROFILE</a></li>
+                                    <li><a href="/logout">LOG-OUT</a></li>
+                                </div>
+                            </ul>
+                        </li>   
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li><a href ="/signup">SIGN-UP</a></li>
+                        <li>|</li>
+                        <li>
+                            <a href ="/login">LOG-IN</a>
+                        </li>   
+                    </ul>
+                {% endif %}
+                </div>
+                <a href ="/">
+                    <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+
+            <div class ="educationUpper">
+                <h1><b>MUSIC </b><i>education</i></h1>
+                <p>
+                    Schools demonstrate a commitment to excellence and 
+                    an unparalleled educational experience by providing 
+                    their students with the rich, unrivaled sound, incomparable 
+                    tone, and pristine touch of STEINWAY & SONS pianos. These 
+                    pianos inspire students to realize their artistic talents, 
+                    and best prepare them to compete at the highest level in the professional world.
+                </p>
+            </div>
+
+            <div class = "gallery">
+                <div class = "innerGallery">
+                    <img src = "static/img/education-2.jpg">
+                </div>
+                <div class = "innerGallery">
+                    <img src = "static/img/education-3.jpg">
+                </div>
+                <div class = "innerGallery">
+                    <img src = "static/img/education-1.jpg">
+                </div>
+            </div>
+
+            <div class ="middle">
+                <h1>NEWS & FEATURES</h1>
+                <h5>HIGHLIGHTS FROM THE STEINWAY CHRONICLE</h5>
+                <p>
+                    The STEINWAY CHRONICLE presents Institutional news 
+                    from STEINWAY & SONS. This publication includes in-depth 
+                    articles with compelling photographs covering Steinway's 
+                    Institutional customers. See more from the Steinway Chronicle.
+                </p>
+            </div>
+
+            <div id = "demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                        <li data-target="#demo" data-slide-to="3"></li>
+                        <li data-target="#demo" data-slide-to="4"></li>
+                    </ul>
+
+                    <div class ="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="static/img/educationBanner-1.PNG">  
+                          </div>
+    
+                          <div class="carousel-item">
+                            <img src="static/img/educationBanner-2.PNG">  
+                          </div>
+    
+                          <div class="carousel-item">
+                            <img src="static/img/educationBanner-3.PNG">  
+                          </div>
+
+                          <div class="carousel-item">
+                            <img src="static/img/educationBanner-5.PNG">  
+                          </div>
+
+                          <div class="carousel-item">
+                            <img src="static/img/educationBanner-6.PNG">  
+                          </div>
+                     </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+            </div>
+
+
+
+
+            <div class = "contentMiddle">
+                <div class = "rowMiddle">
+                    <div class ="columnA">
+                        <h3>Juilliard’s ever-popular practice rooms continue a Steinway grand tradition</h3>
+                        <h5>At the House of Juilliard in the heart of historic Lincoln Center resides
+                             one of the world’s largest inventories of Steinway & Sons pianos: Steinways
+                              on concert stages, in practice rooms, faculty studios, classrooms and dance studios.</h5>
+                    </div>
+                    <hr>
+                    <div class = "columnB">
+                        <img src="static/img/educationLower-1.jpg">
+                    </div>
+                </div>
+
+                <div class = "rowMiddle">
+                    <div class ="columnA">
+                        <h3>Steinway & Sons honors Gary Graffman</h3>
+                        <h5>Steinway & Sons has been a constant companion in Gary 
+                            Graffman’s life since the age of seven, when he received 
+                            his first Steinway piano from the Curtis Institute of Music 
+                            in Philadelphia. To help celebrate his 90th birthday at the 
+                            Kimmel Center, the legendary Steinway Artist accepted a gold-plated 
+                            Steinway Lyre</h5>
+                    </div>
+                    <hr>
+                    <div class = "columnB">
+                        <img src="static/img/educationLower-2.jpg">
+                    </div>
+                </div>
+
+                <div class = "rowMiddle">
+                    <div class ="columnA">
+                        <h3>Cultivating a destination for the arts, Missouri State adds 52 new Steinways</h3>
+                        <h5>SPRINGFIELD, MO – To further distinguish a venerable program at
+                             Missouri State University where more than 300 music majors must
+                              learn to play the piano, one of Dr. Julie Combs’s first orders 
+                              of business was ordering a deep dive into the school’s outdated inventory.</h5>
+                    </div>
+                    <hr>
+                    <div class = "columnB">
+                        <img src="static/img/educationLower-3.jpg">
+                    </div>
+                </div>
+
+                <div class = "rowMiddle">
+                    <div class ="columnA">
+                        <h3>Music is making a major statement At All-Steinway Cal State San Marcos</h3>
+                        <h5>SAN MARCOS, CA – Passion is the new hallmark of a powerhouse 
+                            music program at All-Steinway California State University San Marcos, 
+                            energized in part by the irresistible enthusiasm of people like Ching-Ming Cheng.</h5>
+                    </div>
+                    <hr>
+                    <div class = "columnB">
+                        <img src="static/img/educationLower-4.jpg">
+                    </div>
+                </div>
+
+                <div class = "rowMiddle">
+                    <div class ="columnA">
+                        <h3>Celestial Steinways Shine Above the Skies of Athens</h3>
+                        <h5>Twelve days in November 2018 before the NASA Insight mission
+                             landed on Mars, the All-Steinway University of Georgia hosted
+                              an Intergalactic Piano Extravaganza with music that was out of this world.</h5>
+                    </div>
+                    <hr>
+                    <div class = "columnB">
+                        <img src="static/img/educationLower-5.jpg">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+
+        <script>
+            function navFunction(){
+                var clickBurger = document.getElementById("navLinks");
+                var toHide = document.getElementById("toHide");
+        
+                if(clickBurger.style.display === "block"){
+                    clickBurger.style.display = "none";
+                    toHide.style.display = "block";
+                }else{
+                    clickBurger.style.display = "block";
+                    clickBurger.style.height = "100%";
+                    toHide.style.display = "none";
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

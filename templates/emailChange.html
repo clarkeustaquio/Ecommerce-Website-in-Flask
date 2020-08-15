@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/profile.css">
+        <link rel="stylesheet" type="text/css" href="static/css/changePassword.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                        <ul>
+                            <li><a href ="/cart">CART</a></li>
+                            <li>|</li>
+                            <li>
+                                <a>ACCOUNT</a>
+                                <ul>
+                                    <div class ="dropDown-content">
+                                        <li><a href="/profile">PROFILE</a></li>
+                                        <li><a href="/logout">LOG-OUT</a></li>
+                                    </div>
+                                </ul>
+                            </li>   
+                        </ul>
+                    {% else %}
+                        <ul>
+                            <li><a href ="/signup">SIGN-UP</a></li>
+                            <li>|</li>
+                            <li>
+                                <a href ="/login">LOG-IN</a>
+                            </li>   
+                        </ul>
+                    {% endif %}
+                </div>
+    
+                <a href ="/">
+                    <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+
+
+            <div class ="profileSetting">
+                <form method="POST" action="/email">
+                <div class =header>
+                    <h4>My Profile</h4>
+                    <p>Manage and protect your account</p>
+                    <hr>
+                </div>
+
+                <div class ="changePassword">
+                    <h5>Email: {{ email }}</h5>
+                    <h5>New Email: <input style = "width: 60%; display: inline-block" class = "form-control" type="text" name = "newEmail" id="newEmail" placeholder="New Email" required></h5>
+                    <h5>Password: <input style = "width: 62%; display: inline-block" class = "form-control" type="password" name = "oldPassword" id="oldPassword" placeholder="***********" required></h5>
+                    <button onclick="window.location.href='/profile'" style ="margin-left: 2%">Cancel</button>
+                    <input type="submit" id ="signin" value="Save Changes">
+                </div>
+                </form>
+            </div>
+
+        </div>
+
+
+7
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+    </body>
+</html>

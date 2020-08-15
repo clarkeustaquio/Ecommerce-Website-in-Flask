@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <title>Products</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/products.css">-->
+
+        <!--<link rel="stylesheet" type="text.css" href="{{ url_for('static',filename='cssOffline/fontstyle-roboto.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='cssOffline/w3schools.css')}}">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/mystyle.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/products.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        -->
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mystyle.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/products.css')}}">
+
+        <!--BOOTSTRAP-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <!------//------->
+
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+    
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                        <ul>
+                            <li><a href ="/cart">CART</a></li>
+                            <li>|</li>
+                            <li>
+                                <a>ACCOUNT</a>
+                                <ul>
+                                    <div class ="dropDown-content">
+                                            <li><a href="/profile">PROFILE</a></li>
+                                            <li><a href="/logout">LOG-OUT</a></li>
+                                    </div>
+                                </ul>
+                            </li>   
+                        </ul>
+                    {% else %}
+                        <ul>
+                            <li><a href ="/signup">SIGN-UP</a></li>
+                            <li>|</li>
+                            <li>
+                                <a href ="/login">LOG-IN</a>
+                            </li>   
+                        </ul>
+                    {% endif %}
+                </div>
+    
+                <a href ="/">
+                    <img src = "{{ url_for('static',filename='img/bosendorfer.png')}}" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+
+            <div class="slidershowBanner">
+                <div class="slides">
+                    <div class = "slide">
+                        <div class = "topOverlay">
+                            <img src = "{{ url_for('static',filename='img/newBanner-3.jfif')}}" alt="Guide">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class ="productsUpper">
+                <h1><b>{{ specification[1] }}</b></h1>
+                <h3 style="font-weight: normal"><i>"{{ specification[3] }}"</i></h3>
+                <p>{{ specification[0] }}</p>
+            </div>
+
+            <form method="POST" actions="/products/{{ product_id }}">
+                {% if session['username'] %}
+                    <div class="specs">
+                        <div class="rows">
+                            <div class="innerImage">
+                                <img src="{{ url_for('static',filename=imageSample[0])}}">
+                            </div>
+                            <div class="rightSpecs">
+                                <h5>Shipping
+                                    <select name = "courier" class = "form-control" style = "width: 50%; display: inline-block">
+                                        {% for data in courier %}
+                                            <option value="{{data[0]}}">{{data[1]}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </h5>
+                                <h5 style="word-spacing: 35px">Price ${{ specification[4] }}</h5>
+                                <h5>Quantity <input min = "1" style = "width: 15%; display: inline-block" class = "form-control" name = "quantity" type = "number" placeholder= "-----" required>
+                                    {{ specification[5] }} available stocks
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class ="middle">
+                        <div class="first">
+                            <input type="submit" name = "action" id ="addCart" value="ADD TO CART">
+                        </div>
+                        <div class ="second">
+                            <input type="submit" name = "action" id ="buyNow" value="BUY NOW">
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="specs">
+                        <div class="rows">
+                            <div class="innerImage">
+                                <img src="{{ url_for('static',filename=imageSample[0])}}">
+                            </div>
+                            <div class="rightSpecs">
+                                <h3>Please <a href="/login">Log In</a> to Buy.</h3>
+                                <h5 >Price: ${{ specification[4] }}</h5>
+                                <h5>Quantity: {{ specification[5] }} available stocks
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </form>
+
+            <hr>
+            <div class ="flex-container">
+                {% for data in products %}  
+                <div class = "inner-flex">
+                    <button>
+                        <a href ="/products/{{data[0]}}">
+                            <img src = "{{ url_for('static',filename=data[10][7:])}}" alt="Flex 1">
+                            <span>
+                                <h3>{{data[1]}}</h3>
+                                <div class = "hideSomething">
+                                    <div class = "innerSomething">
+                                        <h5>FIND OUT</h5>
+                                    </div>
+                                </div>
+                            </span>
+                        </a>
+                    </button>
+                    
+                </div>
+                {% endfor %}
+            </div>
+            <div class="justEnd">
+                <h2>“We build our pianos to match the expectations of the world’s most demanding critics"</h2><br>
+                    <h3>— people who love music.</h3>
+            </div>
+            
+        </div>
+
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+
+    </body>
+</html>

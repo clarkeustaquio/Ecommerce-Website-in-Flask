@@ -1,0 +1,192 @@
+<html>
+    <head>
+        <title>Checkout</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/checkout.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body>
+    <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+
+       <div class ="desktopNav">
+           <div class = "desktopImage">
+            <div class ="forUser">
+                {% if session['username'] %}
+                    <ul>
+                        <li><a href ="/cart">CART</a></li>
+                        <li>|</li>
+                        <li>
+                            <a>ACCOUNT</a>
+                            <ul>
+                                <div class ="dropDown-content">
+                                        <li><a href="/profile">PROFILE</a></li>
+                                        <li><a href="/logout">LOG-OUT</a></li>
+                                </div>
+                            </ul>
+                        </li>   
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li><a href ="/signup">SIGN-UP</a></li>
+                        <li>|</li>
+                        <li>
+                            <a href ="/login">LOG-IN</a>
+                        </li>   
+                    </ul>
+                {% endif %}
+            </div>
+
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+            </a>
+           </div>
+            <hr>
+            <div id ="desktopLink">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+
+        <form method="POST" action="/checkout">
+        <div class ="checkOut">
+            <div class ="header">
+                <h4>Checkout Payment</h4>
+                <p>Secure and manage your transactions.</p>
+                <hr>
+            </div>
+
+            <div class ="rowContent">
+                <div class = "columnA">
+                    <h3>Billing Address</h3>
+                    <h5><i style = "font-size: 20px; padding-bottom: -5%; margin-right: -5%;" class="fa fa-user"></i>Full Name</h5>
+                    <input value ="{{ userQuery[0] }} {{ userQuery[1] }}" style = "width: 80%; display: inline-block" class = "form-control" type="text" name = "fullName" id="fullName" placeholder="Full Name" required>
+                    <h5><i style = "font-size: 20px; padding-bottom: -5%; margin-right: -5%;" class="fa fa-envelope"></i> Email</h5>
+                    <input value = " {{ userQuery[2] }}" style = "width: 80%; display: inline-block" class = "form-control" type="email" name = "email" id="email" placeholder="Email" required>
+                    <h5><i style = "font-size: 20px; padding-bottom: -5%; margin-right: -5%;" class="fa fa-address-card-o"></i> Address</h5>
+                    <input value = "{{ addressQuery[0] }}" style = "width: 80%; display: inline-block" class = "form-control" type="text" name = "address1" id="address1" placeholder="Address-1" required>
+                    <input value = "{{ addressQuery[1] }}" style = "width: 80%; display: inline-block; margin-top: 2%" class = "form-control" type="text" name = "address2" id="address2" placeholder="Address-2" required>
+                    
+                    <div class = "payment">
+                        <h3>Payment</h3>
+                        <h5>Accepted Cards</h5>
+
+                        <div class="creditCards">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <h5>Name on card</h5>
+                        <input style = "width: 80%; display: inline-block" class = "form-control" type="text" name = "cardName" id="cardName" placeholder="Card Name" required>
+                        <h5>Credit card number</h5>
+                        <input style = "width: 80%; display: inline-block" class = "form-control" type="number" name = "creditNumber" id="creditNumber" placeholder="1111-2222-3333-4444" required> 
+                    </div>
+                </div>
+
+                <div class ="columnB">
+                    <div class ="vertical"></div>
+
+                    {% if cart is not none%}
+                        {% for data in cart %}
+                            <div class="checkOutRow">
+                                <div class="productDetails">
+                                    <h5><a style="margin-bottom: 5%" href="#">{{ data[6] }}x {{ data[7] }}</a></h5>
+                                    <h5>{{ data[8] }}</h5>
+                                </div>
+                                <div class="productAction">
+                                    <h5>{{ courierID[0] }}</h5>
+                                </div>
+                                <div class="productPrice">
+                                    <h5>${{ data[4] }}</h5>
+                                    <h5>${{ data[3] }}</h5>
+                                </div>
+                                
+                            </div>
+                            <hr>
+                        {% endfor %}
+                    {% endif %}
+
+                    <div class ="forRow">
+                        <div class ="forA">
+                            <h5>Total</h5>
+                        </div>
+                        <div class ="forB">
+                            <h5>${{ totalCheckout }}</h5>
+                        </div>
+                    </div>
+                    <input name ='action' type="submit" id ="checkOut" value="BUY NOW">
+                </div>
+                    
+            </div>
+        </div>
+        </form>
+
+    </div>
+
+    <div class = "footer">
+        <div class ="footer-content">
+            <div class="footer-section about">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2020 Steinway & Sons | Eustaquio
+        </div>
+    </div>
+
+    </body>
+</html>
+<script>
+    function navFunction(){
+        var clickBurger = document.getElementById("navLinks");
+        var toHide = document.getElementById("toHide");
+
+        if(clickBurger.style.display === "block"){
+            clickBurger.style.display = "none";
+            toHide.style.display = "block";
+        }else{
+            clickBurger.style.display = "block";
+            clickBurger.style.height = "100%";
+            toHide.style.display = "none";
+        }
+    }
+</script>

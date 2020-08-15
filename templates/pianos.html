@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <title>Pianos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/pianos.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+    
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                    <ul>
+                        <li><a href ="/cart">CART</a></li>
+                        <li>|</li>
+                        <li>
+                            <a>ACCOUNT</a>
+                            <ul>
+                                <div class ="dropDown-content">
+                                    <li><a href="/profile">PROFILE</a></li>
+                                    <li><a href="/logout">LOG-OUT</a></li>
+                                </div>
+                            </ul>
+                        </li>   
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li><a href ="/signup">SIGN-UP</a></li>
+                        <li>|</li>
+                        <li>
+                            <a href ="/login">LOG-IN</a>
+                        </li>   
+                    </ul>
+                {% endif %}
+                </div>
+                <a href ="/">
+                    <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+
+            <div class = "upper">
+                <h1>STEINWAY GRANDS</h1>
+                <p>
+                    The STEINWAY grand is the gold standard of musical instruments, 
+                    representing over 160 years of dedication to craftsmanship and 
+                    uncompromised expression. It is for these reasons that over 19 out 
+                    of 20 concert pianists choose the STEINWAY grand piano — and why the 
+                    instrument remains at the heart of cultured homes the world over.
+                </p>
+            </div>
+            <div class = "middle">
+                <button onclick="window.location.href='/guide'">LEARN MORE</button>
+            </div>
+            <hr>
+
+            <div class ="flex-container">
+                {% for data in products %}  
+                    <div class = "inner-flex">
+                        <button>
+                            <a href ="/products/{{data[0]}}">
+                                <img src = "{{data[10]}}" alt="Flex 1">
+                                <span>
+                                    
+                                    <h3>{{data[1]}}</h3>
+                                    <div class = "hideSomething">
+                                        <div class = "innerSomething">
+                                            <h5>FIND OUT</h5>
+                                        </div>
+                                    </div>
+                                </span>
+                            </a>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>    
+            </div>
+
+            <div class ="modelList">
+                <img src ="static/img/Model/modelList.PNG">
+            </div>
+
+            <div class ="contentLower">
+                <div class = "lowerPart">
+                    <h3><b>MAKE YOUR STEINWAY GRAND</b><i> a crown jewel</i></h3>
+                    <h5>The STEINWAY CROWN JEWEL COLLECTION is an exclusive series of rare, 
+                        fine veneers available in all STEINWAY grand models.</h5>
+
+                    <div class = "rowLower">
+                        <div class ="columnA">
+                            <img src="static/img/Model/ModelPommele.PNG">
+                        </div>
+
+
+                        <div class = "columnB">
+                            <img src ="static/img/Model/lowerModel.PNG">
+                        </div>
+                    </div>
+                    <div>
+                        <h3><b>AFRICAN POMMELE</b></h3>
+                            <p>
+                                This fine wood from Africa with unusual 
+                                circular light reflections is characterized
+                                by its charismatic texture and has a powerful and intense luminosity.
+                            </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+
+    </body>
+</html>

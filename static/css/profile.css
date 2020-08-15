@@ -1,0 +1,95 @@
+@media only screen and (min-width: 1000px){
+    .profileSetting{
+        width: 70%;
+        height: 70%;
+        background-color: rgba(232, 232, 232, 1);
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .profileSetting .header{
+        padding: 20px;
+    }
+    .rowContent{
+        content: "";
+        display: table;
+        clear: both;
+        width: 100%;
+        height: 80%;
+    }
+
+    .columnA{
+        float: left;
+        width: 45%;
+        height: 100%;
+        padding-left: 5%;
+        text-align: justify;
+        text-justify: inter-word;
+        
+    }
+    .columnA h5{
+        padding-top: 15px;
+        word-spacing: 3px;
+    }
+    .columnA a{
+        font-size: 15px;
+    }
+    .columnB{
+        float: left;
+        width: 55%;
+        height: 100%;
+        padding-left: 5%;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    .columnB a{
+        font-size: 15px;
+    }
+    .columnB h5{
+        word-spacing: 3px;
+    }
+    .columnB button{
+        width: 10%;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 15px 20px 15px 20px;
+        color: white;
+        background-color: rgba(207, 0, 15, 1);
+        text-align: center;
+        cursor: pointer;
+        font-size: 15px;
+        font-family: "Roboto Medium";
+        position: absolute;
+        margin-left: -16%;
+        margin-top: 7%;
+    }
+    .vertical{
+        position: absolute;
+        height: 35%;
+        border-left: 0.5px solid grey;
+        margin-left: -5%;
+    }
+    input[type=date]{
+        padding-left: 5px;
+    }
+    input[type=number]{
+        padding-left: 10px;
+    }
+    input[type=submit]{
+        width: 10%;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 15px 20px 15px 20px;
+        color: white;
+        background-color: rgba(207, 0, 15, 1);
+        text-align: center;
+        cursor: pointer;
+        font-size: 15px;
+        font-family: "Roboto Medium";
+        position: absolute;
+        margin-left: -5%;
+        margin-top: 7%;
+    }
+}

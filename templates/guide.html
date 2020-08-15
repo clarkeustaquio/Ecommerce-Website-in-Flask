@@ -1,0 +1,462 @@
+<html>
+    <head>
+        <title>Guide</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="static/css/guide.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body>
+        <div class ="page-wrapper">
+        <!--RENPONSIVE FOR MOBILE NAVIGATION-->
+        <div class ="mobileTopnav">
+            <a href = "javascript:void(0)" class="icon" onclick="navFunction()">
+                <i style = "margin-top: -25%; margin-left: 20%;" class="fa fa-bars"></i>
+            </a>
+            <a href ="/">
+                <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                
+            </a>
+            <div id="navLinks">
+                <a href ="/guide">GUIDE</a>
+                <a href ="/showroom">SHOWROOM</a>
+                <a href ="/pianos">PIANOS</a>
+                <a href ="/musicartist">Music&Artist</a>
+                <a href ="/education">EDUCATION</a>
+                <a href ="/news">NEWS</a>
+            </div>
+        </div>
+       <!--DESKTOP NAVIGATION-->
+           <div class ="desktopNav">
+               <div class = "desktopImage">
+                <div class ="forUser">
+                    {% if session['username'] %}
+                    <ul>
+                        <li><a href ="/cart">CART</a></li>
+                        <li>|</li>
+                        <li>
+                            <a>ACCOUNT</a>
+                            <ul>
+                                <div class ="dropDown-content">
+                                    <li><a href="/profile">PROFILE</a></li>
+                                    <li><a href="/logout">LOG-OUT</a></li>
+                                </div>
+                            </ul>
+                        </li>   
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li><a href ="/signup">SIGN-UP</a></li>
+                        <li>|</li>
+                        <li>
+                            <a href ="/login">LOG-IN</a>
+                        </li>   
+                    </ul>
+                {% endif %}
+                </div>
+                <a href ="/">
+                    <img src = "static/img/bosendorfer.png" alt = "Steinway & Sons Logo" id = "imgLogo">
+                </a>
+               </div>
+                <hr>
+                <div id ="desktopLink">
+                    <a href ="/guide">GUIDE</a>
+                    <a href ="/showroom">SHOWROOM</a>
+                    <a href ="/pianos">PIANOS</a>
+                    <a href ="/musicartist">Music&Artist</a>
+                    <a href ="/education">EDUCATION</a>
+                    <a href ="/news">NEWS</a>
+                </div>
+            </div>
+                <div class="slidershowBanner">
+                    <div class="slides">
+                        <div class = "slide">
+                            <div class = "topOverlay">
+                                <img src = "static/img/Guide-1.PNG" alt="Guide">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class ="rowCount">
+                <div class="column">
+                    <h3><i>The Steinway & Sons </i><b>PIANO BUYER'S GUIDE</b></h3>
+                    <article>
+                        <p>
+                            Each steinway & sons piano is handcrafted, one at a time, taking almost a full
+                            year to complete. We are proud to say that many of our artisans who handcraft
+                            today’s pianos are second and third generation steinway craftspeople, carrying
+                            forth a steinway family tradition.
+                            It is easy to find a piano that costs less than a steinway, but it is impossible
+                            to find a piano that will offer more heritage, more renown or a greater return
+                            on investment. For more than 165 years, authentic steinways have had an
+                            unrivaled record within the piano world for maintaining their value. Over a 
+                        </p>
+                    </article>
+                </div>
+                <div class ="column">
+                    <article>
+                        <p><br><br>
+                            span of decades, properly cared-for steinways regularly increase in value –
+                            often well beyond the original purchase price.
+                            There are many pianos that you and your family will grow out of. But there
+                            is only one that you’ll grow into — a steinway & sons piano.
+                            The piano has captured the hearts of artists and music lovers for more than
+                            three centuries, and now it’s captured yours. Your decision to bring a piano
+                            into your home and into your heart is a decision to embrace the joys of music,
+                            heritage, artistry, and tradition
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+            <div class = "rowCount">
+                <div class = "column">
+                    <h3><i>Steinway & Sons </i><b>IS HERE TO HELP</b></h3>
+                    <article>
+                        <p>
+                            A well-constructed piano will add beauty and elegance to your home and will
+                            provide a lifetime of musical enjoyment. It is the perfect instrument for beginning
+                            music students as well as seasoned musicians. But we understand that the
+                            process of selecting the right instrument may be challenging. This special Piano
+                            Buyer’s Guide will help you assess your desires, fine tune your preferences, and
+                            select the perfect piano for your specific needs.
+                            In the world of musical instr uments, there are pianos – and there is
+                            steinway & sons. You get more out of a steinway piano, because a great deal 
+                        </p>
+                    </article>
+                </div>
+                <div class ="column">
+                    <article>
+                        <p><br><br>
+                            more goes into it. For more than 160 years, steinway & sons pianos have been
+                            the instrument of choice for more than 95% of the world’s performing artists, and
+                            we’ve built our name and our reputation on a commitment to one simple word:
+                            quality. Our pianos are far more than instruments – they’re investment-worthy,
+                            exquisitely-crafted family heirlooms to be treasured and enjoyed for generations
+                            to come. We’d like to share with you a bit of the knowledge we’ve amassed about
+                            what makes a piano work well, and what makes a piano play well. Armed with
+                            this information, we think you’ll find the piano that speaks directly to you.
+                        </p>
+                    </article>
+                </div>
+            </div>
+            <h1>"Build the best piano possible!."</h1>
+            <div class="rowCount">
+                <div class = "column">
+                    <h3>The Magic <b>OF MUSIC</b></h3>
+                    <artile>
+                        <p>
+                            It’s simply magic, isn’t it? Actually, it isn’t. The piano works through a complex
+                            but highly mechanical process developed in the early 1700s and perfected over
+                            the last three hundred years. Simply put, when a player’s finger strikes a key, it
+                            sets the key action (a series of levers connected to a felt hammer) in motion.
+                            The hammer strikes a metal string, or a combination of strings, which
+                            causes them to vibrate. These vibrations are transmitted from the strings to the 
+
+                            soundboard through bass and treble bridges, and the soundboard converts the
+                            vibrations into what is known as piano tone. It also amplifies the notes so that
+                            they can be heard.
+                            There are over 12,000 specific parts in the typical piano, all of which must
+                            function with ease and accuracy to produce the music we love.
+                        </p>
+                    </artile>
+                </div>
+                <div class = "column">
+                    <img src ="static/img/Guide-2.PNG">
+                </div>
+            </div>
+            <h1>"We build our pianos to match the expectations of the world’s most demanding critics"</h1>
+
+            <div class = "rowCount">
+                <div class ="column">
+                    <article>
+                        <h3>The <b>CASE</b></h3>
+                        <p>
+                            A piano’s outside cabinetry is known as the case, and it is often the piano’s
+                            most visual feature. A high-quality case adds beauty, strength, and support to
+                            the piano. The single most important piece of the case is the rim, which in
+                            the finest pianos like a steinway is made of multiple laminations of hard rock
+                            maple. Strong beams or braces in the bottom of a grand piano or in the backs of
+                            an upright piano provide additional support.
+                        </p>
+                    </article>
+                </div>
+                <div class ="column">
+                    <article>
+                        <p><br><br>
+                            steinway pianos are well known for the strength and beauty of their cases. The
+                            patented process used to make a steinway rim was a major technical innovation
+                            invented by steinway & sons in 1878; as it did then, this process today yields
+                            a rim of superior strength and tonal quality. For braces and posts, steinway
+                            pianos use spruce, a wood known for its superior tensile strength
+                        </p>
+                    </article>
+                </div>
+            </div>
+            <div class = "rowCount" style ="padding-bottom: 50px;">
+                <div class ="column">
+                    <article>
+                        <h3>The <b>PLATE</b></h3>
+                        <p>
+                            Inside the piano, a cast-iron plate provides the strength to support the string
+                            tension. The plate is often called the “backbone” of the piano, and indeed, it
+                            must be exceptionally strong in order to withstand over 20 tons of string tension.
+                            The cast-iron plate is installed in the case above the soundboard and is often
+                            painted gold, p olished, and decorated with the logo of the manufacturer. 
+
+                        </p>
+                    </article>
+                </div>
+                <div class ="column">
+                    <article>
+                        <p><br><br>
+                            In grand pianos, the plate, soundboard, and strings are horizontal, while in
+                            upright pianos, these three components are vertical.
+                            steinway fabricates plates in its own foundry to exacting standards using a
+                            sand-casting method.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+
+                <div class="slidershowBanner">
+                    <div class="slides">
+                        <div class = "slide">
+                            <div class = "topOverlay">
+                                <img src = "static/img/Guide-3.PNG" alt="Guide">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            <div class ="rowCount">
+                <div class="column">
+                    <article>
+                        <h3>The <b>SOUNDBOARD</b></h3>
+                        <p>
+                            The soundboard converts the vibration of the piano strings into audible tones.
+                            Manufacturers of fine pianos craft the soundboard from high-quality solid
+                            spruce, which allows the soundboard to transmit and amplify sound better than
+                            lesser woods.
+                            The soundboard has a curved crown to provide the proper pressure against
+                            the strings for maximum sound projection. Ribs are placed on the underside
+                            of the soundboard in order to maintain the crown, distribute tone along the
+                            soundboard, and provide strength.
+                            steinway soundboards are made of the highest-grade close-grained,
+                            quarter-sawn Sitka spruce from British Columbia and Alaska. This wood is 
+                        </p>
+                    </article>
+                </div>
+                <div class="column">
+                    <article>
+                        <p><br><br>
+                            chosen for its superb acoustic qualities and is hand-selected to be free from
+                            defects. Individual pieces of spruce are matched to produce soundboards of
+                            uniform color and tonal quality.
+                            The soundboards found in steinway pianos are double-crowned and
+                            feature steinway & sons’ exclusive Diaphragmatic design. The Diaphragmatic
+                            Soundboard, patented in 1936, features a soundboard that tapers in thickness
+                            from the center to the edges. This design permits freedom of movement and
+                            creates a richer, longer lasting tonal response.
+                            
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+            <div class = "rowCount">
+                <div class="column">
+                    <article>
+                        <h3>Bridges</h3>
+                        <p>
+                            Soundboard bridges are glued to the top side of the soundboard to transmit
+                            the vibrations from the strings to the soundboard. The better the quality of the
+                            materials, the better the tone.
+                            steinway & sons bridges are constructed of vertically-laminated hard rock
+                            maple with a solid maple cap. They are bent to a specifically-defined contour 
+                        </p>
+                    </article>
+                </div>
+                <div class="column">
+                    <article>
+                        <p><br><br>
+                            to assure optimum sound transmission. The bridge is measured for specific
+                            height requirements for each individual piano and is hand-notched for precise
+                            individual string bearing. The bridges are then glued and doweled into the ribs
+                            to assure the structural integrity of the entire soundboard.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+            <div class = "rowCount">
+                <div class = "column">
+                    <article>
+                        <img src="static/img/Guide-4.PNG">
+                    </article>
+                </div>
+                <div class = "column">
+                    <article>
+                        <h3>The <b>PEDALS</b></h3>
+                        <p>
+                            steinway grand pianos have three pedals. The rightmost pedal is called the
+                            damper (or sustain) pedal and acts to sustain tone. The left pedal is called the
+                            una corda or “soft” pedal. When it is depressed, the keyboard action shifts
+                            slightly to the side, causing the hammers to strike the strings differently, thus
+                            softening the note. The middle, or sostenuto pedal, sustains a single note or
+                            group of notes without sustaining subsequent notes played. While a few 
+
+                            uprights (like the New York steinway) have a true sostenuto pedal, the middle
+                            pedal on most upright pianos sustains the bass section by lifting the dampers
+                            off the bass strings only.
+                            steinway grand and upright pianos feature fully-functional una corda,
+                            sostenuto* and damper pedals made of solid brass.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+            <div class ="rowCount">
+                <div class="column">
+                    <article>
+                        <h3>Keys and <b>ACTION</b></h3>
+                        <p>
+                            There are 88 keys on a modern piano – 52 white keys and 36 black keys
+                            (the chromatic notes) – spanning seven and one-third octaves. Piano keys are
+                            typically made of spruce with a polymer surface. Today’s polymer key surfaces
+                            are more durable, do not yellow over time, and are easier to replace than their
+                            ivory predecessors.
+                            Each of the keys on a piano transmits its movement to a small, feltcovered wooden hammer which strikes one, two, or three strings when the note
+                            is played. The hammers are evenly aligned and have the ability to reset quickly
+                            and repeat any note rapidly.
+                            Dampers are felt-covered action parts that, when placed against the strings,
+                            dampen the vibration. There are fewer than 88 dampers on a piano because
+                            the notes in the high treble area of the piano do not need dampers, due to 
+                        </p>
+                    </article>
+                </div>
+                <div class ="column">
+                    <article>
+                        <p><br><br>
+                            their short length of sustain. The damper (or sustaining) pedal raises all of the
+                            dampers, which allows sound to continue even after the key is released.
+                            In a grand piano, gravity assists the action. In an upright, springs return the
+                            hammer to its resting position. This difference typically allows a grand piano
+                            to rep e at notes faster and more reliably t han an upr ig ht. The ke ys of a
+                            steinway & sons piano are constructed of Bavarian spruce. The quarter-sawn
+                            maple action parts are mounted on a steinway Metallic Action Frame, which
+                            consists of seamless brass tubes with rosette-shaped contours, force fitted with
+                            maple dowels and brass hangers to assure the stability of the regulation.
+                            In 1936, steinway & sons designed the Accelerated Action (featured on the
+                            New York steinway) in response to demands for a quicker responding action.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+            <!---------------------------->
+            <div class ="flex-container">
+                <div class = "inner-flex">
+                    <button>
+                        <a href ="/pianos">
+                            <img src = "static/img/showroom.jpg" alt="Flex 2">
+                            <span>
+                                <h3>PIANOS</h3>
+                                <div class = "hideSomething">
+                                    <div class = "innerSomething">
+                                        <h5>Learn More</h5>
+                                    </div>
+                                </div>
+                            </span>
+                        </a>
+                    </button>
+                </div>
+        
+                <div class = "inner-flex">
+                    <button>
+                        <a href ="/showroom">
+                            <img src = "static/img/vault.png" alt="Flex 3">
+                        <span>
+                            <h3>SHOWROOM</h3>
+                            <div class = "hideSomething">
+                                <div class = "innerSomething">
+                                    <h5>Learn More</h5>
+                                </div>
+                            </div>
+                            </span>
+                    </a>
+                    </button>
+                </div>
+                <div class = "inner-flex">
+                    <button>
+                        <a href ="/musicartist">
+                        <img src = "static/img/spirio.jpg" alt="Flex 4">
+                        <span>
+                            <h3>MUSIC & ARTIST</h3>
+                            <div class = "hideSomething">
+                                <div class = "innerSomething">
+                                    <h5>Learn More</h5>
+                                </div>
+                            </div>
+                    </span>
+                    </a>
+                    </button>
+                </div>
+                <h2>“Steinway is the only piano on which the pianist can do
+                    everything he wants and everything he dreams. ”</h2>
+            </div> 
+
+
+            
+          
+        </div>
+    
+        <!-------------------------------------->
+    
+        <div class = "footer">
+            <div class ="footer-content">
+                <div class="footer-section about">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Steinway & Sons | Eustaquio
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    function navFunction(){
+        var clickBurger = document.getElementById("navLinks");
+        var toHide = document.getElementById("toHide");
+
+        if(clickBurger.style.display === "block"){
+            clickBurger.style.display = "none";
+            toHide.style.display = "block";
+        }else{
+            clickBurger.style.display = "block";
+            clickBurger.style.height = "100%";
+            toHide.style.display = "none";
+        }
+    }
+</script>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/fontstyle-roboto.css">
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/w3schools.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="static/css/login.css">
+
+        <!--BOOTSRAP-->
+        <link rel="stylesheet" type="text/css" href="static/cssOffline/bootstrap.css">
+        <script src="static/cssOffline/ajaxQuery.js"></script>
+        <script src="static/cssOffline/popperQuery.js"></script>
+        <script src="static/cssOffline/bootstrap-2.js"></script>
+        <!--//-->
+    </head>
+    <body style ="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(static/img/showroom.jpg)">       
+        <form method="POST" action="/login">
+            <div class = "middleLogin">
+                    <h1>Sign In</h1>
+                    <input type="text" name = "username" id="username" placeholder="Username" required>
+                    <input type="password" name = "password" id="password" placeholder="Password" required>
+                    <input type="submit" id ="signin" value="Sign In" required>
+                    <h5>New User? <a href="/signup">Sign up now.</a><a style = "margin-left: 20%" href = "/">Need help?</a></h5>
+            </div>
+        </form>
+    </body>
+</html>
